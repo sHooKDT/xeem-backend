@@ -4,8 +4,10 @@ RUN pip install eve
 
 WORKDIR /home
 
-EXPOSE 500
-
 RUN git clone -b master https://github.com/sHooKDT/xeem-backend.git xeem-api
 CMD ["nginx", "-c /home/xeem-api/proxy-conf/nginx.conf"]
-CMD ["python", "xeem-api/run.py"]
+RUN chmod +x xeem-api/run.py
+CMD ["nohup", "xeem-api/run.py &"]
+
+EXPOSE 500
+EXPOSE 81
