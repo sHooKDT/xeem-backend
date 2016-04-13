@@ -1,5 +1,11 @@
-FROM python:3-onbuild
-RUN apt-get update && apt-get install -y git python-pip
-RUN git clone https://github.com/sHooKDT/xeem-backend.git
+FROM ubuntu:trusty
+RUN apt-get update && apt-get install -y python python-pip git
 RUN pip install eve
-CMD ["python", "xeem-backend/run.py"]
+
+WORKDIR /home
+
+EXPOSE 500
+
+RUN git clone -b master https://github.com/sHooKDT/xeem-backend.git xeem-api
+CMD ["nginx", "-c /home/xeem-api/proxy-conf/nginx.conf"]
+CMD ["python", "xeem-api/run.py"]
