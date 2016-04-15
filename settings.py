@@ -15,18 +15,22 @@ blank_schema = {
         'maxlength': 50,
         'required': True,
     },
+    'id': {
+    	'type': 'integer',
+    	'unique': True,
+    }
     'date': {
         'type': 'integer',
         'required': True,
     },
     'public': {
         'type': 'boolean',
+        'required': True,
     },
     'author': {
         'type': 'string',
         'minlength': 3,
         'maxlength': 15,
-        'required': True,
     },
     'questions': {
         'type': 'list',
