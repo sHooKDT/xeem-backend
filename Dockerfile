@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-RUN apt-get update && apt-get install -y python python-pip git
+RUN apt-get update && apt-get install -y python python-pip git nginx
 RUN pip install eve
 
 WORKDIR /home
