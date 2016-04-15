@@ -18,7 +18,7 @@ blank_schema = {
     'id': {
     	'type': 'integer',
     	'unique': True,
-    }
+    },
     'date': {
         'type': 'integer',
         'required': True,
