@@ -6,7 +6,7 @@ WORKDIR /home
 
 RUN git clone -b master https://github.com/sHooKDT/xeem-backend.git xeem-api
 CMD nginx -c /home/xeem-api/proxy-conf/nginx.conf
-CMD python /home/xeem-api/run.py &
+CMD python /home/xeem-api/run.py
 
 EXPOSE 500
 EXPOSE 81
