@@ -8,6 +8,8 @@ MONGO_USERNAME = 'testuser'
 MONGO_PASSWORD = 'testpass'
 MONGO_DBNAME = 'xeem-data'
 
+XML = False
+
 blank_schema = {
     'title': {
         'type': 'string',
@@ -16,7 +18,7 @@ blank_schema = {
         'required': True,
     },
     'id': {
-    	'type': 'integer',
+    	'type': 'string',
     	'unique': True,
     },
     'date': {
@@ -29,8 +31,6 @@ blank_schema = {
     },
     'author': {
         'type': 'string',
-        'minlength': 3,
-        'maxlength': 15,
     },
     'questions': {
         'type': 'list',
