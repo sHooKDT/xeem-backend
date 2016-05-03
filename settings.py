@@ -17,6 +17,9 @@ blank_schema = {
         'maxlength': 50,
         'required': True,
     },
+    'pic': {
+    	'type': 'string'
+    },
     'date': {
         'type': 'integer',
         'required': True,
@@ -67,6 +70,26 @@ blank_schema = {
             },
         },
     },
+    'result-strings': {
+    	'type': 'list',
+    	'schema': {
+    		'type': 'dict',
+    		'schema': {
+    			'points': {
+    				'type': 'integer',
+    				'min': 0,
+    				'required': True
+    			},
+    			'text': {
+    				'type': 'string',
+    				'required': True
+    			},
+    			'pic': {
+    				'type': 'string'
+    			}
+    		}
+    	}
+    }
 }
 
 result_schema = {
