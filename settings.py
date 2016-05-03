@@ -17,17 +17,12 @@ blank_schema = {
         'maxlength': 50,
         'required': True,
     },
-    'id': {
-    	'type': 'string',
-    	'unique': True,
-    },
     'date': {
         'type': 'integer',
         'required': True,
     },
     'public': {
         'type': 'boolean',
-        'required': True,
     },
     'author': {
         'type': 'string',
@@ -39,8 +34,9 @@ blank_schema = {
             'schema': {
                 'text': {
                     'type': 'string',
-                    'minlength': 5,
-                    'maxlength': 150
+                    'minlength': 1,
+                    'maxlength': 150,
+                    'required': True
                 },
                 'pic': {
                     'type': 'string'
@@ -59,7 +55,8 @@ blank_schema = {
                         'schema': {
                             'text': {
                                 'type': 'string',
-                                'minlength': 5
+                                'minlength': 1,
+                                'required': True,
                             },
                             'pic': {
                                 'type': 'string'
@@ -72,8 +69,48 @@ blank_schema = {
     },
 }
 
+result_schema = {
+	'testid': {
+		'type': 'string',
+		'required': True,
+	},
+	'testetag': {
+		'type': 'string'
+	},
+	'userid': {
+		'type': 'string',
+		'required': True
+	},
+	'regdate': {
+		'type': 'integer'
+	},
+}
+
+user_schema = {
+	'userid': {
+		'type': 'string',
+		'required': True,
+	},
+	'username': {
+		'type': 'string',
+		'minlength': 1
+	},
+	'userpic': {
+		'type': 'string'
+	},	
+	'regdate': {
+		'type': 'integer'
+	},
+}
+
 DOMAIN = {
     'blanks': {
         'schema': blank_schema
+    },
+    'users': {
+    	'schema': user_schema
+    },
+    'results': {
+    	'schema': result_schema
     }
 }
