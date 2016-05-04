@@ -104,9 +104,22 @@ result_schema = {
 		'type': 'string',
 		'required': True
 	},
-	'regdate': {
+	'date': {
 		'type': 'integer'
 	},
+	'points': {
+		'type': 'integer'
+	},
+	'max_points': {
+		'type': 'integer'
+	},
+	'right_questions': {
+		'type': 'integer'
+	},
+	'max_questions': {
+		'type': 'integer'
+	}
+
 }
 
 user_schema = {
